@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "projects": "Projets",
+    "about": "À propos"
+  },
+  "hero": {
+    "name": "Nathan Pernot",
+    "tagline": "Développeur full-stack & étudiant en informatique"
+  },
+  "projects": {
+    "title": "Projets",
+    "viewProject": "Voir le projet",
+    "resapp": {
+      "description": "Un système de réservation de véhicules pour gérer les réservations de flotte en temps réel.",
+      "summary": "Un système de réservation de véhicules full-stack pour gérer les réservations de flotte municipale avec disponibilité en temps réel.",
+      "problem": "Les employés municipaux devaient réserver des véhicules de manière entièrement manuelle — formulaires papier, appels téléphoniques, sans aucune visibilité sur les disponibilités.",
+      "solution": "Une application web permettant aux employés de réserver des véhicules avec disponibilité en temps réel, de consulter leurs réservations à venir et de recevoir des confirmations par e-mail. Les administrateurs peuvent gérer la flotte et consulter les statistiques d'utilisation.",
+      "features": [
+        "Calendrier de disponibilité en temps réel",
+        "Accès basé sur les rôles (personnel vs admin)",
+        "Confirmations de réservation par e-mail",
+        "Historique des réservations par utilisateur",
+        "Tableau de bord de gestion de flotte"
+      ],
+      "challenges": "Gérer les réservations simultanées sans conditions de course était le principal défi technique — résolu avec les verrous consultatifs PostgreSQL pour éviter les doubles réservations."
+    },
+    "equipmentTracker": {
+      "description": "Outil interne de suivi de la distribution d'équipements informatiques entre services.",
+      "summary": "Outil interne de suivi de la distribution d'équipements informatiques entre services municipaux.",
+      "problem": "Le service informatique n'avait aucun moyen centralisé de suivre quel équipement était attribué à quel service ou employé — tout était géré via des feuilles de calcul éparses.",
+      "solution": "Une application CRUD légère pour enregistrer les attributions d'équipements, suivre les retours et consulter l'historique des statuts par élément. En développement actif.",
+      "features": [
+        "Catalogue d'équipements avec catégories",
+        "Suivi des attributions et retours",
+        "Historique des changements de statut",
+        "Tableau de bord par service"
+      ],
+      "challenges": "Concevoir le modèle de données pour gérer le provisionnement partiel — où un seul article (comme un lot de câbles) peut être réparti entre plusieurs services — sans perdre la traçabilité."
+    },
+    "goalTracker": {
+      "description": "Une application légère pour définir et suivre ses objectifs personnels.",
+      "summary": "Une application légère pour définir, suivre et réfléchir à ses objectifs personnels.",
+      "problem": "Je voulais un moyen simple de suivre des objectifs personnels sans m'inscrire à une suite de productivité complexe.",
+      "solution": "Une petite application React alimentée par Firebase pour la persistance. Délibérément minimale — juste ce qui est nécessaire, rien de plus.",
+      "features": [
+        "Ajouter, compléter et supprimer des objectifs",
+        "Persistance en temps réel avec Firebase",
+        "Interface propre et minimale"
+      ],
+      "challenges": "Garder le périmètre intentionnellement limité — résister à la tentation d'ajouter des fonctionnalités et ne construire que ce qui était réellement utile."
+    }
+  },
+  "about": {
+    "title": "À propos",
+    "bio": "Étudiant en BTS CIEL IR2, travaillant au service informatique d'une mairie. Passionné par le développement full-stack et les expériences utilisateur soignées. Bilingue français & anglais avec de solides connaissances en matériel et systèmes.",
+    "stats": {
+      "projects": "Projets",
+      "languages": "Langues",
+      "yearsExp": "Années de code"
+    }
+  },
+  "footer": {
+    "builtWith": "Construit avec Next.js",
+    "rights": "Tous droits réservés."
+  },
+  "projectDetails": {
+    "back": "← Retour",
+    "techStack": "Stack technique",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "problem": "Le problème",
+    "solution": "La solution",
+    "features": "Fonctionnalités clés",
+    "challenges": "Défis",
+    "viewGithub": "Voir sur GitHub",
+    "viewLive": "Voir en ligne",
+    "wip": "En cours de développement"
+  }
+}

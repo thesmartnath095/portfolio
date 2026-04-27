@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "about": "About"
+  },
+  "hero": {
+    "name": "Nathan Pernot",
+    "tagline": "Full-stack developer & IT student"
+  },
+  "projects": {
+    "title": "Projects",
+    "viewProject": "View project",
+    "resapp": {
+      "description": "A vehicle booking system for managing fleet reservations with real-time availability.",
+      "summary": "A full-stack vehicle booking system for managing municipal fleet reservations with real-time availability.",
+      "problem": "City employees needed to book municipal vehicles, but the process was entirely manual — paper forms, phone calls, and no visibility into availability.",
+      "solution": "A web application that lets employees book vehicles with live availability, view their upcoming reservations, and receive email confirmations. Administrators can manage the fleet and view utilization stats.",
+      "features": [
+        "Real-time availability calendar",
+        "Role-based access (staff vs admin)",
+        "Email confirmations on booking",
+        "Reservation history per user",
+        "Fleet management dashboard"
+      ],
+      "challenges": "Handling concurrent bookings without race conditions was the main technical challenge — solved with PostgreSQL advisory locks to prevent double-booking."
+    },
+    "equipmentTracker": {
+      "description": "Internal tool for tracking IT equipment provisioning across departments.",
+      "summary": "Internal tool for tracking IT equipment provisioning across municipal departments.",
+      "problem": "The IT service had no centralized way to track which equipment was assigned to which department or employee — it was managed through scattered spreadsheets.",
+      "solution": "A lightweight CRUD application for logging equipment assignments, tracking returns, and viewing status history per item. Currently in active development.",
+      "features": [
+        "Equipment catalog with categories",
+        "Assignment and return tracking",
+        "Status change history",
+        "Department overview dashboard"
+      ],
+      "challenges": "Designing the data model to handle partial provisioning — where a single item (like a batch of cables) can be split across multiple departments — without losing traceability."
+    },
+    "goalTracker": {
+      "description": "A lightweight app for setting and tracking personal goals.",
+      "summary": "A lightweight app for setting, tracking, and reflecting on personal goals.",
+      "problem": "I wanted a simple way to track personal goals without signing up for a complex productivity suite.",
+      "solution": "A small React app backed by Firebase for persistence. Deliberately minimal — just what's needed, nothing more.",
+      "features": [
+        "Add, complete, and delete goals",
+        "Firebase real-time persistence",
+        "Clean minimal interface"
+      ],
+      "challenges": "Keeping scope intentionally small — resisting the pull toward feature creep and building only what was actually useful."
+    }
+  },
+  "about": {
+    "title": "About",
+    "bio": "IT student in BTS CIEL IR2, working at a townhall IT service. Passionate about full-stack development and polished user experiences. Bilingual French & English with strong hardware and systems knowledge.",
+    "stats": {
+      "projects": "Projects",
+      "languages": "Languages",
+      "yearsExp": "Years coding"
+    }
+  },
+  "footer": {
+    "builtWith": "Built with Next.js",
+    "rights": "All rights reserved."
+  },
+  "projectDetails": {
+    "back": "← Back",
+    "techStack": "Tech Stack",
+    "previous": "Previous",
+    "next": "Next",
+    "problem": "The Problem",
+    "solution": "The Solution",
+    "features": "Key Features",
+    "challenges": "Challenges",
+    "viewGithub": "View on GitHub",
+    "viewLive": "View Live",
+    "wip": "Work in Progress"
+  }
+}
