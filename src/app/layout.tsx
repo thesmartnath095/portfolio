@@ -21,6 +21,15 @@ export const metadata: Metadata = {
   title: "Nathan Pernot — Full-Stack Developer",
   description:
     "Portfolio of Nathan Pernot — IT student and full-stack developer specializing in polished, modern web experiences.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    noimageindex: true,
+    "max-snippet": -1,
+    "max-image-preview": "none",
+    "max-video-preview": -1,
+  },
 };
 
 export default function RootLayout({
