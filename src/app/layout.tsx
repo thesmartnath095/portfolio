@@ -3,6 +3,7 @@ import { JetBrains_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { CursorGlow } from "@/components/effects/CursorGlow";
 import { ScrollProgressBar } from "@/components/effects/ScrollProgressBar";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,6 +34,7 @@ export default function RootLayout({
         <CursorGlow />
         <ScrollProgressBar />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
