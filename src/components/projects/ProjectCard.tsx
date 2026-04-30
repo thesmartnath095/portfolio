@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { fadeInUp } from "@/lib/animations";
@@ -37,8 +38,19 @@ export function ProjectCard({
               "group-hover:opacity-0"
             )}
           />
-          {/* Placeholder gradient for now (replace with actual thumbnails later) */}
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-surface to-accent-secondary/10 transition-transform duration-500 group-hover:scale-105" />
+
+          {/* Actual thumbnail or gradient fallback */}
+          {project.thumbnail ? (
+            <Image
+              src={project.thumbnail}
+              alt={project.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-surface to-accent-secondary/10 transition-transform duration-500 group-hover:scale-105" />
+          )}
 
           {/* WIP badge */}
           {project.status === "wip" && (

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
 
@@ -19,6 +20,7 @@ export function MobileNav({ locale, nav }: MobileNavProps) {
         onClick={() => setOpen(!open)}
         className="flex h-8 w-8 flex-col items-center justify-center gap-1.5"
         aria-label="Toggle menu"
+        aria-expanded={open}
       >
         <span
           className={cn(
@@ -35,26 +37,34 @@ export function MobileNav({ locale, nav }: MobileNavProps) {
       </button>
 
       {/* Dropdown */}
-      {open && (
-        <div className="glass absolute left-0 right-0 top-16 border-b border-white/5 p-6">
-          <nav className="flex flex-col gap-4">
-            <a
-              href={`/${locale}#projects`}
-              onClick={() => setOpen(false)}
-              className="font-mono text-sm text-text-muted transition-colors hover:text-heading"
-            >
-              {nav.projects}
-            </a>
-            <a
-              href={`/${locale}#about`}
-              onClick={() => setOpen(false)}
-              className="font-mono text-sm text-text-muted transition-colors hover:text-heading"
-            >
-              {nav.about}
-            </a>
-          </nav>
-        </div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="glass absolute left-0 right-0 top-16 border-b border-white/5 p-6"
+          >
+            <nav className="flex flex-col gap-4">
+              <a
+                href={`/${locale}#projects`}
+                onClick={() => setOpen(false)}
+                className="font-mono text-sm text-text-muted transition-colors hover:text-heading"
+              >
+                {nav.projects}
+              </a>
+              <a
+                href={`/${locale}#about`}
+                onClick={() => setOpen(false)}
+                className="font-mono text-sm text-text-muted transition-colors hover:text-heading"
+              >
+                {nav.about}
+              </a>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

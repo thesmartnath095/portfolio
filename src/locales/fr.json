@@ -57,7 +57,19 @@
       "projects": "Projets",
       "languages": "Langues",
       "yearsExp": "Années de code"
+    },
+    "skills": {
+      "frontend": { "label": "Frontend" },
+      "backend": { "label": "Backend" },
+      "systems": { "label": "Systèmes & Outils" }
     }
+  },
+  "contact": {
+    "title": "Travaillons ensemble",
+    "subtitle": "Vous avez un projet en tête ou voulez simplement dire bonjour ? Ma boîte mail est toujours ouverte.",
+    "emailLabel": "54nathan.p@gmail.com",
+    "githubLabel": "GitHub",
+    "linkedinLabel": "LinkedIn"
   },
   "footer": {
     "builtWith": "Construit avec Next.js",

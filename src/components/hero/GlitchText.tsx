@@ -47,10 +47,14 @@ export function GlitchText({
   }, [text]);
 
   useEffect(() => {
-    // Small delay before starting
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setDisplayed(text);
+      setResolved(true);
+      return;
+    }
     const timeout = setTimeout(scramble, 300);
     return () => clearTimeout(timeout);
-  }, [scramble]);
+  }, [scramble, text]);
 
   return (
     <span className={`${className ?? ""} ${resolved ? "text-shimmer" : ""}`}>

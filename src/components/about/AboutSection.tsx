@@ -13,22 +13,38 @@ interface AboutSectionProps {
     languages: string;
     yearsExp: string;
   };
+  skills: {
+    frontend: { label: string };
+    backend: { label: string };
+    systems: { label: string };
+  };
 }
 
-const skills = [
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Tailwind CSS",
-  "PostgreSQL",
-  "Python",
-  "Git",
-  "Linux",
-  "Windows Server",
+const skillCategories = [
+  {
+    key: "frontend" as const,
+    color: "var(--color-accent)",
+    bg: "oklch(from var(--color-accent) l c h / 0.08)",
+    border: "oklch(from var(--color-accent) l c h / 0.25)",
+    items: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
+  },
+  {
+    key: "backend" as const,
+    color: "var(--color-accent-secondary)",
+    bg: "oklch(from var(--color-accent-secondary) l c h / 0.08)",
+    border: "oklch(from var(--color-accent-secondary) l c h / 0.25)",
+    items: ["Node.js", "PostgreSQL", "Python"],
+  },
+  {
+    key: "systems" as const,
+    color: "#4ade80",
+    bg: "oklch(from #4ade80 l c h / 0.08)",
+    border: "oklch(from #4ade80 l c h / 0.25)",
+    items: ["Git", "Linux", "Windows Server"],
+  },
 ];
 
-export function AboutSection({ title, bio, stats }: AboutSectionProps) {
+export function AboutSection({ title, bio, stats, skills }: AboutSectionProps) {
   return (
     <section id="about" className="mx-auto w-full max-w-6xl px-6 py-32">
       <AnimatedHeading
@@ -39,7 +55,7 @@ export function AboutSection({ title, bio, stats }: AboutSectionProps) {
       <div className="grid gap-16 lg:grid-cols-2">
         {/* Text side */}
         <motion.div
-          className="flex flex-col gap-8"
+          className="flex flex-col gap-10"
           variants={fadeInLeft}
           initial="hidden"
           whileInView="visible"
@@ -47,15 +63,31 @@ export function AboutSection({ title, bio, stats }: AboutSectionProps) {
         >
           <p className="text-lg leading-relaxed text-text">{bio}</p>
 
-          {/* Skills */}
-          <div className="flex flex-wrap gap-2">
-            {skills.map((skill) => (
-              <span
-                key={skill}
-                className="rounded-lg border border-white/10 bg-surface px-3 py-1.5 font-mono text-xs text-text-muted transition-colors hover:border-accent/30 hover:text-accent"
-              >
-                {skill}
-              </span>
+          {/* Categorized skills */}
+          <div className="flex flex-col gap-6">
+            {skillCategories.map((cat) => (
+              <div key={cat.key} className="flex flex-col gap-2.5">
+                <span
+                  className="font-mono text-[11px] uppercase tracking-widest"
+                  style={{ color: cat.color }}
+                >
+                  {skills[cat.key].label}
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {cat.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-lg px-3 py-1.5 font-mono text-xs text-heading transition-opacity hover:opacity-80"
+                      style={{
+                        background: cat.bg,
+                        border: `1px solid ${cat.border}`,
+                      }}
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </motion.div>
