@@ -68,8 +68,7 @@
     "title": "Let's work together",
     "subtitle": "Have a project in mind or just want to say hello? My inbox is always open.",
     "emailLabel": "54nathan.p@gmail.com",
-    "githubLabel": "GitHub",
-    "linkedinLabel": "LinkedIn"
+    "githubLabel": "GitHub"
   },
   "footer": {
     "builtWith": "Built with Next.js",
